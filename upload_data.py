@@ -40,4 +40,5 @@ if __name__ == '__main__':
 
     while True:
         upload(data)
+        print("[" + datetime.today().strftime('%Y-%m-%d %H:%M:%S') + "]" + " upload done!")
         sleep(60)
