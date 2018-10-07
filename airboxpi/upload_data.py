@@ -13,13 +13,12 @@ def upload(data):
     data.update(zip(("date", "time", "tick"), datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S").split() + [time()]))
     payload = ''.join(f"|{key}={value}"for key, value in data.items())
 
-    return get(f"https://pm25.lass-net.org/api/v1/upload/{data['app']}/{data['device_id']}/{payload}")
+    return get("https://pm25.lass-net.org/api/v1/upload/{app}/{device_id}/{payload}".format(payload=payload, **data))
 
 
 if __name__ == '__main__':
 
-    latitude, longitude, temperature, humidity, PM1_0, PM2_5, PM10 = "25.038", "121.513", 1001000, 1001000, 1001000, 1001000, 1001000
-
+    latitude, longitude, temperature, humidity, PM1_0, PM2_5, PM10 = 25.045582, 121.531032, 1001000, 1001000, 1001000, 1001000, 1001000
     data = dict(app = "AirBot-Pi",
                 device_id = "1001000",
                 device = "1001000",
