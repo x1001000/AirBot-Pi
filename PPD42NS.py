@@ -96,6 +96,7 @@ if __name__ == "__main__":
 
    s = PPD42NS.sensor(pi, 24)
 
+   '''
    while True:
 
       time.sleep(1) # Use 30 for a properly calibrated reading.
@@ -104,6 +105,9 @@ if __name__ == "__main__":
 
       print("gpio={} ratio={:.1f} conc={} pcs per 0.01 cubic foot".
          format(g, r, int(c)))
-
+   '''
+   time.sleep(30)
+   g, r, c = s.read()
+   print(int(c), 'pcs/cc')
    pi.stop() # Disconnect from Pi.
 
