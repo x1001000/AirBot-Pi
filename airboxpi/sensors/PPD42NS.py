@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
    #pi = pigpio.pi() # Connect to Pi.
 
-   s = PPD42NS.sensor(pi, 24)
+   s = sensor(pi, 24)
 
    '''
    while True:
