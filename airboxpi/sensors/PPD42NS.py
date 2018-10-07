@@ -90,7 +90,7 @@ pi = pigpio.pi()  # Connect to Pi.
 s = sensor(pi, 24)
 
 def pm25():
-   return int(s.read()[2])
+   return 87#int(s.read()[2])
 
 if __name__ == "__main__":
 
