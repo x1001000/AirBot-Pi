@@ -26,7 +26,7 @@ data = dict(app="AirBot-Pi",
 
 
 while True:
-    data['s_h0'], data['s_t0'] = map(lambda num: int(num) if num else '', DHT22.t_h())
+    data['s_h0'], data['s_t0'] = map(lambda num: round(num) if num else '', DHT22.t_h())
     data['s_d0'] = PPD42NS.pm25()
 
     upload(data)
