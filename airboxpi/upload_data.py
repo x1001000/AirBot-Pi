@@ -10,7 +10,7 @@ def upload(data):
     :return: requests.Response
     '''
 
-    data.update(zip(("date", "time", "tick"), datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S").split() + [time()]))
+    data.update(zip(("date", "time", "tick"), datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S").split() + [int(time())]))
     payload = ''.join("|{}={}".format(key, value) for key, value in data.items())
 
     return get("https://pm25.lass-net.org/api/v1/upload/{app}/{device_id}/{payload}".format(payload=payload, **data))
