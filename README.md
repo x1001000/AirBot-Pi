@@ -3,4 +3,10 @@
 - DHT22 signal to GPIO4(Pin7)
 
 ## Installing
-sudo pip3 install smbus-cffi Adafruit_DHT
+- `sudo pip3 install Adafruit_DHT pigpio`
+- `sudo apt-get install pigpio`
+
+## Start/Stop the pigpio daemon
+- `sudo pigpiod`
+- `sudo killall pigpiod`
+
