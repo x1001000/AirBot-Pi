@@ -23,8 +23,10 @@ data = dict(app="AirBot-Pi",
 from time import sleep
 
 while True:
+    data['s_h0'], data['s_t0'] = DHT22.dht.read_retry(dht.DHT22, 4)
+    data['s_d0'] = PPD42NS.pm25()
 
-    DHT22.dht.read_retry
     upload(data)
     print("[" + datetime.today().strftime('%Y-%m-%d %H:%M:%S') + "]" + " upload done!")
+    print(data)
     sleep(60)

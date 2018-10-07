@@ -21,7 +21,7 @@ if __name__ == '__main__':
     latitude, longitude, temperature, humidity, PM1_0, PM2_5, PM10 = 25.045582, 121.531032, 1001000, 1001000, 1001000, 1001000, 1001000
     data = dict(app = "AirBot-Pi",
                 device_id = "1001000",
-                device = "1001000",
+                device = "AitBot Pi",
                 ver_format = "3",
                 fmt_opt = "0",
                 FAKE_GPS = "1",

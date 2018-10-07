@@ -4,6 +4,8 @@
 # 2015-11-22
 # Public Domain
 
+import pigpio
+
 class sensor:
    """
    A class to read a Shinyei PPD42NS Dust Sensor, e.g. as used
@@ -84,12 +86,18 @@ class sensor:
          self._start_tick = tick
          self._last_tick = tick
 
+pi = pigpio.pi()  # Connect to Pi.
+
+def pm25():
+   s = PPD42NS.sensor(pi, 24)
+   return int(s.read()[2])
+
 if __name__ == "__main__":
 
    import time
    import pigpio
 
-   pi = pigpio.pi() # Connect to Pi.
+   #pi = pigpio.pi() # Connect to Pi.
 
    s = PPD42NS.sensor(pi, 24)
 
