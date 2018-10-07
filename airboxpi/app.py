@@ -1,5 +1,5 @@
 from sensors import DHT22, PPD42NS
-
+from upload_data import upload
 latitude, longitude, temperature, humidity, PM1_0, PM2_5, PM10 = '25.045582', '121.531032', '', '', '', '', ''
 
 data = dict(app="AirBot-Pi",
