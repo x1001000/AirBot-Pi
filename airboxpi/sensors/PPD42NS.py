@@ -87,9 +87,9 @@ class sensor:
          self._last_tick = tick
 
 pi = pigpio.pi()  # Connect to Pi.
+s = sensor(pi, 24)
 
 def pm25():
-   s = sensor(pi, 24)
    return int(s.read()[2])
 
 if __name__ == "__main__":
@@ -97,11 +97,10 @@ if __name__ == "__main__":
    import time
    import pigpio
 
-   #pi = pigpio.pi() # Connect to Pi.
-
+   pi = pigpio.pi() # Connect to Pi.
    s = sensor(pi, 24)
 
-   '''
+
    while True:
 
       time.sleep(1) # Use 30 for a properly calibrated reading.
@@ -110,9 +109,9 @@ if __name__ == "__main__":
 
       print("gpio={} ratio={:.1f} conc={} pcs per 0.01 cubic foot".
          format(g, r, int(c)))
-   '''
-   time.sleep(30)
-   g, r, c = s.read()
-   print(int(c), 'pcs/cc')
+
+   #time.sleep(30)
+   #g, r, c = s.read()
+   #print(int(c), 'pcs/cc')
    pi.stop() # Disconnect from Pi.
 
