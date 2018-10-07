@@ -103,7 +103,7 @@ if __name__ == "__main__":
 
    while True:
 
-      time.sleep(1) # Use 30 for a properly calibrated reading.
+      time.sleep(30) # Use 30 for a properly calibrated reading.
 
       g, r, c = s.read()
 
