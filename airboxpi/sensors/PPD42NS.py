@@ -89,7 +89,7 @@ class sensor:
 pi = pigpio.pi()  # Connect to Pi.
 
 def pm25():
-   s = PPD42NS.sensor(pi, 24)
+   s = sensor(pi, 24)
    return int(s.read()[2])
 
 if __name__ == "__main__":
